@@ -1,6 +1,5 @@
 .terraform
 terraform.tfstate
-*.auto.tfvars
 *.backup
 vault
 password
