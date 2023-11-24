@@ -1,17 +1,20 @@
 terraform {
   required_providers {
-    virtualbox = {
-      source = "terra-farm/virtualbox"
-      version = "0.2.2-alpha.1 "
+    yandex = {
+      source = "yandex-cloud/yandex"
     }
     datadog = {
-      source = "DataDog/datadog"
+      source  = "DataDog/datadog"
+      version = "~> 3.20.0"
     }
   }
+  required_version = ">= 0.13"
 }
 
+provider "yandex" {
+  zone = "ru-central1-a"
+}
 
-# Configure the Datadog provider
 provider "datadog" {
   api_key = var.datadog_api_key
   app_key = var.datadog_app_key
