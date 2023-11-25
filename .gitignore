@@ -6,6 +6,8 @@ password
 vault-password-file
 secret
 *.hcl
+*.bak
+*.json
 
 # Local .terraform directories
 **/.terraform/*
