@@ -8,5 +8,3 @@ edit_vault:
 	ansible-vault edit group_vars/webservers/vault.yml --vault-password-file "~/vault-password-file"
 install_req:
 	ansible-galaxy install -r requirements.yml
-powershell_fix_env:
-	$env:PATH = $env:PATH + ";C:\Program Files\Oracle\VirtualBox"
