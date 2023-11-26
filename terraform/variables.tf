@@ -63,17 +63,17 @@ variable "disk_type" {
 }
 
 variable "user_name" {
-  default = "none"
+  default = ""
   type    = string
 }
 
 variable "user_pass" {
-  default = "none"
+  default = ""
   type    = string
 }
 
 variable "admin_pass" {
-  default = "none"
+  default = ""
   type    = string
 }
 
@@ -87,20 +87,20 @@ variable "timeout_delete" {
 
 variable "ssh_key" {
   type    = string
-  default = "none"
+  default = ""
 }
 
 variable "service_account_id" {
   type    = string
-  default = "none"
+  default = ""
 }
 
 variable "token" {
   type    = string
-  default = "none"  
+  default = ""  
 }
 
 variable "public_ip" {
   type    = string
-  default = "none"  
+  default = ""  
 }
