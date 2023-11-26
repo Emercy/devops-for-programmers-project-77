@@ -3,7 +3,7 @@ terraform {
     organization = "emercy"
 
     workspaces {
-      name = "yc_mega_workspace"
+      name = "my-app-prod"
     }
   }
 }
