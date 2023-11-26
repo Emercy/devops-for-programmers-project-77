@@ -23,9 +23,9 @@ variable "subnet" {
   default = "ya-network"
 }
 
-variable "subnet_v4_cidr_blocks" {
+variable "v4_cidr_blocks" {
   type    = list(string)
-  default = ["192.168.10.0/16"]
+  default = ["192.168.10.0/24"]
 }
 
 variable "nat" {
@@ -96,6 +96,11 @@ variable "service_account_id" {
 }
 
 variable "token" {
+  type    = string
+  default = ""  
+}
+
+variable "public_ip" {
   type    = string
   default = ""  
 }

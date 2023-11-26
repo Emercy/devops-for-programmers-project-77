@@ -1,8 +1,13 @@
 - hosts: all
   become: true
+  vars:
+    pip_install_packages:
+      - name: docker
+        state: latest
 
   roles:
-    - role: geerlingguy.pip
+    - geerlingguy.pip
+    - geerlingguy.docker
   
   tasks:
     - name: Template a file to .env
@@ -13,7 +18,7 @@
 
     - name: Pull Redmine image
       community.docker.docker_image:
-        name: redmine:latest
+        name: redmine
         source: pull
       tags: config
     
