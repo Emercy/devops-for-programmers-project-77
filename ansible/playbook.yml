@@ -15,12 +15,6 @@
         src: templates/env.j2
         dest: /etc/.env
       tags: config
-
-    - name: Pull Redmine image
-      community.docker.docker_image:
-        name: redmine
-        source: pull
-      tags: config
     
     - name: Create Redmine container
       community.docker.docker_container:
@@ -30,22 +24,3 @@
         ports:
           - 80:3000
       tags: deploy
-
-- hosts: webservers
-  become: true
-
-  roles:
-    - { role: datadog.datadog, become: true }
-
-  tasks:
-    - name: HTTP check config
-      ansible.builtin.template:
-        src: templates/http_check.j2
-        dest: /etc/datadog-agent/conf.d/http_check.d/conf.yaml
-      tags: config
-      notify:
-        - Restart DataDog agent
-
-  handlers:
-    - name: Restart DataDog agent
-      service: name=datadog-agent state=restarted
