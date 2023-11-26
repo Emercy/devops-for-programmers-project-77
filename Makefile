@@ -10,3 +10,11 @@ vm_list:
 	yc compute instance list
 token:
 	yc config list
+tf_init:
+	terraform -chdir=terraform init
+tf_plan:
+	terraform -chdir=terraform plan
+tf_apply:
+	terraform -chdir=terraform apply
+tf_destroy:
+	terraform -chdir=terraform destroy
