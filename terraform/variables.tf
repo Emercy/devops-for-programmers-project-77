@@ -38,10 +38,6 @@ variable "image_family" {
   default = "debian-10"
 }
 
-variable "name" {
-  type = string
-}
-
 variable "cores" {
   type    = number
   default = 2
@@ -63,18 +59,21 @@ variable "disk_type" {
 }
 
 variable "user_name" {
-  default = ""
-  type    = string
+  default   = ""
+  type      = string
+  sensitive = true
 }
 
 variable "user_pass" {
-  default = ""
-  type    = string
+  default   = ""
+  type      = string
+  sensitive = true
 }
 
 variable "admin_pass" {
-  default = ""
-  type    = string
+  default   = ""
+  type      = string
+  sensitive = true
 }
 
 variable "timeout_create" {
@@ -86,21 +85,42 @@ variable "timeout_delete" {
 }
 
 variable "ssh_key" {
-  type    = string
-  default = ""
+  type      = string
+  default   = ""
+  sensitive = true
 }
 
 variable "service_account_id" {
-  type    = string
-  default = ""
+  type      = string
+  default   = ""
+  sensitive = true
 }
 
 variable "token" {
-  type    = string
-  default = ""  
+  type      = string
+  default   = "" 
+  sensitive = true
 }
 
 variable "public_ip" {
+  type      = string
+  default   = ""
+  sensitive = true
+}
+
+variable "security_group_ids" {
   type    = string
-  default = ""  
+  default = "enptuu5nvmgnctaap2j6"
+}
+
+variable "db_name" {
+  type      = string
+  default   = ""
+  sensitive = true
+}
+
+variable "db_password" {
+  type      = string
+  default   = ""
+  sensitive = true
 }
